@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>Интервальный таймер</title>
+	 <!-- Это название страницы, выводится в табе браузера-->
+
+  	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<!-- это служебная информация для браузера, пока можно не вникать -->
+
+	<!-- подключаем фреймворк jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" type="text/javascript" defer></script>
+	
+
+</head>
+
+
+<body >
+
+	<!-- делаем общий блок, где будет наш таймер, и применяем к нему общие стили -->
+	<div class="app_form_block app_main app_timer ">
+
+		<!-- подключаем звуковые уведомления -->
+		<audio id="audio_beep">
+			<source src="s.mp3" type="audio/mp3" >
+		</audio>
+
+		<!-- делаем форму на сайте, где будем выводить наши элементы -->
+		<form name="timer_form" id="timer_form">
+
+			<!-- пишем специальный заголовок страницы -->
+			<div class="block_row timer_types ">
+				<span class="timer_types_btn active" id="Secret">Таймер
+				</span>
+			</div>
+
+			<!-- основной блок с цифрами -->
+			<div class="block_row  app_console">
+				
+				<!-- панель, где мы задаём время тренировки, количество повторов и время перерыва -->
+				<div class="timer_panel_info ">
+
+					<!-- блок, который отвечает за время тренировки -->
+					<span class="timer_interval_work">
+
+						<!-- по умолчанию ставим время одного подхода 0 минут… -->
+						<span class="timer_interval_nums minutes green" contenteditable="true">00
+						</span>
+						<!-- разделитель — двоеточие -->
+						<span class="timer_sep">:
+						</span>
+
+						<!-- …и 25 секунд -->
+						<span class="timer_interval_nums seconds green" contenteditable="true">25
+						</span>
+					</span>
+
+					<!-- блок, который отвечает за количество подходов -->
+					<span class="timer_interval_count">
+
+						<!-- какой сейчас идёт подход -->
+						<span class="timer_interval_nums times">1
+						</span>
+
+						<!-- разделитель — косая черта -->
+						<span class="timer_sep">/
+						</span>
+
+						<!-- и сколько подходов у нас всего -->
+						<span class="timer_interval_nums all_times" contenteditable="true">10
+						</span>
+					</span>
+
+					<!-- блок, который отвечает за время отдыха -->
+					<span class="timer_interval_rest">
+
+						<!-- по умолчанию ставим время отдыха 0 минут… -->
+						<span class="timer_interval_nums minutes red" contenteditable="true">00
+						</span>
+
+						<!-- разделитель — двоеточие -->
+						<span class="timer_sep">:
+						</span>
+
+						<!-- …и 5 секунд -->
+						<span class="timer_interval_nums seconds red" contenteditable="true">5
+						</span>
+					</span>
+
+				<!-- закончилась панель настроек -->
+				</div>
+
+				<!-- большая цифровая панель -->
+				<div class="timer_panel_nums">
+					
+					<!-- минуты… -->
+					<span class="timer_nums minutes" >00</span>
+					<span >:</span>
+
+					<!-- …и секунды -->
+					<span class="timer_nums seconds" >00</span>
+				</div>
+
+			<!-- закончился основной блок с числами -->
+			</div>
+			<div class="text-minnutes" id="textik">минуты</div>
+			<div class="text-seconds" id="textik">секунды</div>
+			
+
+			<!-- блок кнопок -->
+			<div class="block_row">
+
+				<!-- Кнопка Старт -->
+				<!-- =============================================================================-->
+		<!-- =============================================================================-->
+			<!-- =============================================================================-->		
+				<input value="Старт" name="timer_run" id="timer_run" class="timer_btn run" type="button" />
+
+			
+
+				<!-- Кнопка «Пауза», в самом начале она скрыта -->
+				<input value="Пауза" name="timer_pause" id="timer_pause" class="timer_btn pause hide" type="button" />
+
+
+
+				<!-- Кнопка «Сброс» -->
+				<input value="Сброс" name="timer_clear" id="timer_clear" class="timer_btn" type="button" />
+					
+			<!-- закончился блок кнопок -->
+			</div>
+	
+		<!-- закончилась форма -->
+		</form>
+
+	<!-- закончился общий блок -->
+	</div>
+
+	<!-- подключаем наш код, который отвечает за правильную работу таймера -->
+	<script type="text/javascript" src="interval_timer_script.js" defer></script>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	
+</body>
+</html>
